@@ -1,0 +1,255 @@
+:root {
+  --white: #ffffff;
+  --black: #0f172a;
+  --gray-light: #6b7280;
+  --gray-pale: #f3f4f6;
+  --gray-medium: #d1d5db;
+  --gradient-start: #9ca3af;
+  --gradient-end: #e5e7eb;
+  --blue-dark: #1e293b;
+  --blue-light: #334155;
+  --hover-accent: #f9fafb;
+}
+
+@font-face {
+  font-family: 'Aptos';
+  src: url('fonts/Aptos-Regular.woff2') format('woff2'),
+       url('fonts/Aptos-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
+}
+@font-face {
+  font-family: 'Aptos';
+  src: url('fonts/Aptos-Bold.woff2') format('woff2'),
+       url('fonts/Aptos-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Aptos';
+  src: url('fonts/Aptos-Italic.woff2') format('woff2'),
+       url('fonts/Aptos-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  font-family: 'Aptos', sans-serif;
+  color: var(--black);
+  background-color: var(--white);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  color: var(--blue-dark);
+}
+
+p {
+  color: var(--gray-light);
+}
+
+ul {
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+section {
+  padding: 4rem 2rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+header {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--gray-medium);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-wrap: wrap; 
+}
+
+header .logo h2 {
+  margin: 0;
+  color: var(--blue-dark);
+  font-size: 1.5rem;
+}
+
+header .logo a {
+  text-decoration: none;
+}
+
+nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--blue-light);
+}
+
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 6rem 2rem;
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+}
+
+.hero-content {
+  max-width: 800px;
+  text-align: center;
+}
+
+.about-section h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem); 
+  margin-bottom: 1rem;
+}
+
+.about-section h3 {
+  font-size: clamp(1rem, 2vw, 1.25rem); 
+  font-style: italic;
+  color: var(--blue-light);
+  margin-bottom: 1.5rem;
+}
+
+.about-section p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile-image-container {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--white);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--blue-dark);
+  color: var(--white);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--blue-light);
+}
+
+
+.cards-section {
+  text-align: center;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--gray-pale);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--gray-medium);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  background: var(--hover-accent); 
+}
+
+
+footer {
+  background-color: var(--white);
+  border-top: 1px solid var(--gray-medium);
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: var(--gray-light);
+}
+
+footer p {
+  margin: 0.5rem 0;
+}
+
+@media (min-width: 992px) {
+  .about-section {
+    flex-direction: row;
+    text-align: left;
+  }
+  
+  .hero-content {
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  nav {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  nav a {
+    margin: 0.5rem 0.75rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+}
